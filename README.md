@@ -51,7 +51,17 @@ dsh plugin --profile web add "github:pypcfx-glitch/risk-rule-design"
 
 ### 方式二：从npm安装
 
-待补充
+```bash
+dsh plugin --profile web install dsh-plugin-risk-rule-design
+```
+
+安装后重启 `dsh web` 生效；卸载：
+
+```bash
+dsh plugin --profile web remove dsh-plugin-risk-rule-design
+```
+
+> 提示：方式一（github 直装）与方式二（npm 安装）任选其一即可，无需重复安装。
 
 ## 四、使用流程
 
