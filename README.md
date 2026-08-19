@@ -14,6 +14,8 @@
 | 工具 | `rrd_report` | 第 3 步：基于挖掘快照重新生成/调整 HTML 报告 |
 | 技能 | `risk-rule-design` | 专家方法论（角色、流程、评判标准、报告结构），可被模型/用户加载 |
 
+**⚠️这个插件是东哥的第一个dsh插件，还在完善中；如使用中有不妥之处，欢迎各位留言指正。**
+
 ---
 
 ## 二、目录结构
@@ -79,27 +81,49 @@ rrd_report(snapshot, [title, note])   # 可选
 
 ## 五、HTML报告结构及展示
 
-1. **一、数据集与质量检查**：样本/字段/坏率概览、字段清单与剔除决策、质量检查问题、y 分布；
-![alt text](pic1.png)
-2. **二、单变量效果分析**：每个特征的候选规则（命中率、命中坏率、Lift、IV）与可视化条形图；
-![alt text](pic2.png)
-3. **三、组合规则效果分析**：
+1. **数据集与质量检查**：样本/字段/坏率概览、字段清单与剔除决策、质量检查问题、y 分布；
+<p align="center">
+  <img src="./demo/pic1.png" alt="Screenshot" width="600"/>
+</p>
+
+2. **单变量效果分析**：每个特征的候选规则（命中率、命中坏率、Lift、IV）与可视化条形图；
+<p align="center">
+  <img src="./demo/pic2.png" alt="Screenshot" width="600"/>
+</p>
+
+3. **组合规则效果分析**：
    - 最优组合总览卡片（精准率、召回率、F1、命中率、Lift、拒绝样本数）；
    - 最优组合内所有规则 + 累积命中率 / Lift / 召回率 / 边际增益明细；
-   ![alt text](pic3.png)
-   ![alt text](pic4.png)
+    <p align="center">
+      <img src="./demo/pic3.png" alt="Screenshot" width="600"/>
+    </p>
+
+    <p align="center">
+      <img src="./demo/pic4.png" alt="Screenshot" width="600"/>
+    </p>
+
    - **全部组合评估表**（按 F1 降序）：排名、组合规则、精准率、召回率、F1、命中率、Lift，
      最优高亮（top_lift 目标时 ⭐ 标注 top5%）；
-     ![alt text](pic5.png)
+    <p align="center">
+      <img src="./demo/pic5.png" alt="Screenshot" width="600"/>
+    </p>
+
    - **命中率 × Lift 点位图**：全部组合散点，最优高亮（可见累加规则后沿「命中率↑、Lift↓」移动）；
-   ![alt text](pic6.png) 
+    <p align="center">
+      <img src="./demo/pic6.png" alt="Screenshot" width="600"/>
+    </p>
+
    - **精准率-召回率曲线**：全部组合曲线，标注 **F1 最高点（即最优组合对应的点）**，而非拐点；
-   ![alt text](pic7.png)
+    <p align="center">
+      <img src="./demo/pic7.png" alt="Screenshot" width="600"/>
+    </p>
+
    - 候选规则池与入选情况；
+   
 4. **附录**：分析配置与约束说明。
 
 报告为**自包含 HTML**（内联 CSS/SVG，无外部资源），可直接用浏览器打开。
 
 ---
 
-**这个插件是东哥的第一个dsh插件，正在慢慢熟悉中，如使用中有不妥支持，欢迎指正。**
+
