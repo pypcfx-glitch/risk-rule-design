@@ -1,0 +1,14 @@
+# risk_rule_design 插件补丁覆盖层（cordis patch overlay）
+#
+# 用法一（推荐，持久生效）：把下面的 insert 合并进 web profile 的补丁文件
+#   C:\Users\yaodyu\.dsh\profiles\web\cordis.patch.yml
+# 用法二（临时覆盖，无需改 profile）：启动时追加
+#   dsh web --patch "D:\2. 学习\00-AI\dsh\risk_rule_design\cordis.yml"
+#
+# 注意：
+#   - 插件路径必须是绝对路径；
+#   - 插件在 dsh 启动时加载，修改后需重启 dsh web 生效；
+#   - 插件本身为纯 JS（零构建、零外部依赖），任何 Node 版本均可直接加载。
+- insert:
+    - id: risk-rule-design
+      name: 'D:\2. 学习\00-AI\dsh\risk_rule_design\src\index.js'

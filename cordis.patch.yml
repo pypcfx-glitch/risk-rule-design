@@ -1,0 +1,8 @@
+# risk_rule_design 插件补丁（npm 包形态）
+#
+# 与根目录 cordis.yml（绝对路径版，源码直挂）不同：
+# 本文件用于 npm 发布后的安装（dsh plugin --profile web install <包名>），
+# name 按包名解析——loader 以 profile 目录为锚解析其 node_modules。
+- insert:
+    - id: risk-rule-design
+      name: 'dsh-plugin-risk-rule-design/src/index.js'

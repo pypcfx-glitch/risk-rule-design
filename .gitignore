@@ -1,0 +1,12 @@
+# 依赖与构建产物
+node_modules/
+
+# 演示数据与生成物（用 demo/make_demo_data.mjs 自行复现）
+demo/*.csv
+demo/report/
+demo/e2e_out/
+demo/risk_rule_mining_*.json
+demo/risk_rule_report_*.html
+
+# 日志
+*.log
