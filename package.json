@@ -8,7 +8,8 @@
     "src",
     "cordis.patch.yml",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "demo/pic*.png"
   ],
   "dsh": {
     "bundle": {
