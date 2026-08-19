@@ -43,13 +43,7 @@ risk_rule_design/
 
 插件是**纯 JavaScript（ESM）**，零构建、零外部依赖。
 
-### 方式一：从Github安装
-
-```bash
-dsh plugin --profile web add "github:pypcfx-glitch/risk-rule-design"
-```
-
-### 方式二：从npm安装
+### 方式一：从npm安装（推荐）
 
 ```bash
 dsh plugin --profile web install dsh-plugin-risk-rule-design
@@ -61,7 +55,33 @@ dsh plugin --profile web install dsh-plugin-risk-rule-design
 dsh plugin --profile web remove dsh-plugin-risk-rule-design
 ```
 
-> 提示：方式一（github 直装）与方式二（npm 安装）任选其一即可，无需重复安装。
+> ✅ npm 包自带 `dsh.bundle.patch`，安装命令会自动把包注册进 profile 的
+> `dsh.profile.bundles`，重启后工具与技能即可用，无需手动配置。
+
+### 方式二：从Github安装（备选）
+
+```bash
+dsh plugin --profile web add "github:pypcfx-glitch/risk-rule-design"
+```
+
+> ⚠️ GitHub 直装只把包加入依赖，**不会自动注册 bundle**，需手动把包名追加到
+> profile 的 `C:\Users\yaodyu\.dsh\profiles\web\package.json` 中：
+
+```json
+"dsh": {
+  "profile": {
+    "bundles": [
+      "@deepseek-ai/dsh-base",
+      "@deepseek-ai/dsh-web-app",
+      "risk-rule-design"
+    ]
+  }
+}
+```
+
+然后重启 `dsh web` 生效。
+
+> 提示：两种方式任选其一即可，无需重复安装；推荐方式一（npm 安装一键生效）。
 
 ## 四、使用流程
 
