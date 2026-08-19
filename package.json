@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-risk-rule-design",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "DeepSeek Harness 第三方插件：金融风控规则挖掘。数据质检、连续变量阈值遍历、单规则挖掘、逐层遍历树并行(OR)组合搜索（F1 平衡最优）并输出自包含 HTML 分析报告。纯 JS 零依赖。",
   "type": "module",
   "main": "src/index.js",
@@ -17,7 +17,9 @@
     }
   },
   "exports": {
-    "./cordis.patch.yml": "./cordis.patch.yml"
+    ".": "./src/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/index.js": "./src/index.js"
   },
   "keywords": [
     "deepseek-harness",
